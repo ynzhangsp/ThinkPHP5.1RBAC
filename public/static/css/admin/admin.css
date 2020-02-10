@@ -1,0 +1,98 @@
+@charset "utf8";
+/**
+    后台管理样式
+ */
+.form-content {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: #f2f2f2;
+}
+.form-content .layui-tab {
+    margin-top: 0;
+    background-color: #fff;
+}
+
+.data-content {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: #f2f2f2;
+}
+.data-content .layui-tab {
+    margin-top: 0;
+    background-color: #fff;
+}
+
+.data-container .layui-form-checkbox {
+    top: 5px !important;
+}
+
+/* 角色授权 */
+.auth-title {
+    height: 30px;
+    margin-bottom: 10px;
+    line-height: 30px;
+    border-bottom: 1px solid #eee;
+}
+.auth-list {
+    height: 80%;
+    overflow-y: auto;
+    -ms-overflow-y: auto;
+}
+.auth-item {
+    height: 40px;
+    line-height: 40px;
+}
+.auth-item .layui-form-checkbox i::before,
+.auth-item .layui-form-checked i::before {
+
+}
+.auth-item .layui-form-checkbox[lay-skin=primary] {
+    top: 0 !important;
+    margin-top: 0;
+}
+.auth-item .layui-form-checkbox[lay-skin=primary] i {
+    text-indent: 0;
+}
+.auth-item .layui-form-checkbox[lay-skin=primary] i::before {
+    left: -20px;
+}
+.auth-item label {
+    margin-left: -6px;
+}
+.form-btn-auth {
+    margin: 20px 0 20px 0;
+    text-indent: 20px;
+}
+.form-item-list {
+    height: 90%;
+    overflow-y: auto;
+    -ms-overflow-y: auto;
+}
+.form-btn-scroll {
+    margin: 10px 0 0 90px;
+    text-indent: 20px;
+}
+
+/* 图标选择 */
+#filter {
+    position: relative;
+    margin-bottom: 10px;
+}
+#filter + span {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    width: 40px;
+    height: 40px;
+    line-height: 38px;
+    text-align: center;
+}
+#filter + span i {
+    font-size: 22px;
+    font-weight: bold;
+    color: #999;
+}

@@ -1,0 +1,58 @@
+@charset "utf-8";
+body {
+    background: url("/static/images/login-bg.jpg") no-repeat;
+}
+#login {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    text-align: center;
+    vertical-align: middle;
+}
+#login .login-wrap {
+    margin: 150px auto 0;
+    padding: 20px 40px;
+    box-sizing: border-box;
+    width: 375px;
+    height: 400px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+#login .login-wrap h2 {
+    margin: 20px auto 10px auto;
+    height: 30px;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 30px;
+    color: #333;
+}
+#login .login-wrap h3 {
+    margin-bottom: 30px;
+}
+#login .login-wrap .layui-form-item {
+    position: relative;
+}
+#login .login-wrap .layui-form-item .layui-form-label {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    padding: 9px 5px;
+    color: #ccc;
+}
+#login .login-wrap .layui-form-item input {
+    text-indent: 2em;
+}
+#login .login-wrap .layui-form-item input.captcha {
+    width: 165px;
+}
+#login .login-wrap .layui-form-item .cpatcha-img {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+#login .login-wrap p,
+#login .login-wrap p a{
+    color: #ccc;
+}
