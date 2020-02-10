@@ -83,7 +83,7 @@ www  WEB部署目录（或者子目录）
 1.  搭建开发环境，推荐使用PhpStudy；
 2.  下载或Git项目代码到本地，将代码拷贝至：E:/phpstudy_pro/www/目录下；
 3.  通过PhpStudy面板添加网站，并指向项目根目录的public/目录下；
-4.  新建数据库think_auth（可自定义数据库名称，然后在config/database.php文件中修改数据库配置），导入数据库文件think_auth.sql;
+4.  新建数据库think_rbac（可自定义数据库名称，然后在config/database.php文件中修改数据库配置），导入数据库文件think_rbac.sql;
 5.  使用浏览器（推荐chrome浏览器）访问：http://yourdomain.com/admin，默认用户名/密码：admin。
 
 #### 使用说明
@@ -101,21 +101,3 @@ www  WEB部署目录（或者子目录）
 ![角色授权](https://images.gitee.com/uploads/images/2020/0210/173017_779a039c_1163529.jpeg "04.jpg")
 ![管理员管理](https://images.gitee.com/uploads/images/2020/0210/173126_c9d50f56_1163529.jpeg "05.jpg")
 ![登录日志](https://images.gitee.com/uploads/images/2020/0210/173234_f86c2a76_1163529.jpeg "06.jpg")
-
-#### 参与贡献
-
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
-
-
-#### 码云特技
-
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  码云官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解码云上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是码云最有价值开源项目，是码云综合评定出的优秀开源项目
-5.  码云官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  码云封面人物是一档用来展示码云会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
-
