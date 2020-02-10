@@ -1,4 +1,4 @@
-![](https://box.kancloud.cn/5a0aaa69a5ff42657b5c4715f3d49221) 
+![](https://images.gitee.com/uploads/images/2020/0210/172236_e5b19fa6_1163529.png) 
 
 ThinkPHP 5.1.39（LTS版本） —— RBAC权限管理系统
 ===============
@@ -91,16 +91,16 @@ www  WEB部署目录（或者子目录）
 1.  角色管理：添加角色、编辑角色、删除角色、角色授权
 2.  权限管理：添加权限、编辑权限、删除权限、
 3.  用户管理：添加用户、编辑用户、删除用户
-4.  菜单管理：添加菜单、编辑菜单、删除菜单
+4.  日志管理：登录日志
 5.  文章管理：模拟菜单，未开发功能
 
 #### 预览截图
-![后台首页](https://images.gitee.com/uploads/images/2019/1226/142138_da813866_1163529.png "01.png")
-![角色管理](https://images.gitee.com/uploads/images/2019/1226/142151_345a4c50_1163529.png "02.png")
-![权限管理](https://images.gitee.com/uploads/images/2019/1226/142202_79b09316_1163529.png "03.png")
-![角色授权](https://images.gitee.com/uploads/images/2019/1226/142210_4b84dfc0_1163529.png "04.png")
-![菜单管理](https://images.gitee.com/uploads/images/2019/1226/142219_14e84413_1163529.png "05.png")
-![用户管理](https://images.gitee.com/uploads/images/2019/1226/142228_5a7b5f4d_1163529.png "06.png")
+![后台首页](https://images.gitee.com/uploads/images/2020/0210/172641_98a85c07_1163529.jpeg "01.jpg")
+![角色管理](https://images.gitee.com/uploads/images/2020/0210/172803_06a7d6ee_1163529.jpeg "02.jpg")
+![节点管理](https://images.gitee.com/uploads/images/2020/0210/172901_3dc0a0d3_1163529.jpeg "03.jpg")
+![角色授权](https://images.gitee.com/uploads/images/2020/0210/173017_779a039c_1163529.jpeg "04.jpg")
+![管理员管理](https://images.gitee.com/uploads/images/2020/0210/173126_c9d50f56_1163529.jpeg "05.jpg")
+![登录日志](https://images.gitee.com/uploads/images/2020/0210/173234_f86c2a76_1163529.jpeg "06.jpg")
 
 #### 参与贡献
 
