@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>{$title|default="ThinkPHP5.1 RBAC权限管理系统"}</title>
+    {// 加载CSS样式}
+    {load href="__CSS__/public/public.css"/}
+    {load href="__LAYUI__/css/layui.css"/}
+    {load href="__CSS__/iconfont/iconfont.css"/}
+    {load href="__CSS__/admin/admin.css"/}
+    {// 引入zTree样式}
+    {// load href="__LAYEXT__/ztree/metroStyle.css"/}
+</head>
+<body class="layui-layout-body">
+    <div class="layui-card">
+        <div class="layui-card-header">
+            <i class="iconfont">&#xe755;</i> {$title}</i>
+        </div>
+        <div class="layui-card-body">
+            {block name="main"}主体内容{/block}
+        </div>
+    </div>
+
+    {// 加载js文件}
+    {load href="__JS__/jquery-3.4.1.min.js"/}
+    {load href="__LAYUI__/layui.js"/}
+
+    {// js代码}
+    {block name="layui"}{/block}
+    {block name="javascript"}{/block}
+</body>
+</html>

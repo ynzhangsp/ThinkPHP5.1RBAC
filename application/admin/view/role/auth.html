@@ -1,0 +1,148 @@
+{extend name="public:layer_layout"/}
+{block name="css"}
+{// 引入zTree样式}
+{load href="__LAYEXT__/ztree/metroStyle.css"/}{/block}
+{block name="main"}
+<div class="auth-title">
+    当前授权角色：<span class="text-fail text-bold" id="test">{$roleInfo.name}</span>
+</div>
+<form method="post" class="layui-form form-inline" id="form1">
+    <div class="auth-list">
+        <div class="zTreeDemoBackground left">
+            <ul class="ztree" style="margin-left: 5px;margin-top:5px; padding: 0;">
+                <li><a title="全部展开、折叠 "><span class="button ico_open"></span><span id="ztree_expandAll" data-open="false">全部展开、折叠 </span></a> </li>
+            </ul>
+            <ul id="treeDemo" class="ztree"></ul>
+        </div>
+        <input type="hidden" name="rules" value="" />
+        <input type="hidden" name="id" value="{$roleInfo.id}" />
+    </div>
+    <div class="layui-form-item layui-hide">
+        <div class="layui-input-inline">
+            <button type="submit" class="layui-btn" id="submit" lay-submit lay-filter="submit"><i class="iconfont">&#xe645;</i> 立即提交</button>
+            <button type="button" class="layui-btn layui-btn-normal" onclick="javascript:history.back(-1);"><i class="iconfont">&#xe9af;</i> 取消</button>
+        </div>
+    </div>
+</form>
+{/block}
+{block name="lay_ext"}
+<script>
+layui.config({
+    version: '1061458899',
+    base: '__LAYEXT__/'
+}).extend({
+    ztree : 'ztree/ztree'
+});
+</script>
+{/block}
+{block name="javascript"}
+<script>
+    layui.use(['form', 'jquery', 'ztree'], function () {
+        var form = layui.form,
+            $ = layui.$,
+            ztree = layui.ztree;
+
+        // 配置
+        var setting = {
+            //设置 zTree 的节点上是否显示 checkbox / radio
+            check: {
+                enable: true,
+                chkboxType: { "Y": "ps", "N": "ps" }
+            },
+            data: {
+                simpleData: {
+                    enable: true,
+                    idKey: "nid",
+                    pIdKey: "parentid"
+                }
+            },
+            callback: {
+                beforeClick: function(treeId, treeNode) {
+                    if (treeNode.isParent) {
+                        zTree.expandNode(treeNode);
+                        return false;
+                    } else {
+                        return true;
+                    }
+                },
+                onClick: function(event, treeId, treeNode) {
+                    // 节点ID
+                    // var id = treeNode.id;
+                    //保存当前点击的节点ID
+                    // setCookie('tree_id', id, 1);
+                }
+            }
+        };
+        //节点数据
+        var zNodes = {$json|raw};
+
+        //zTree对象
+        var zTree = null;
+        $(document).ready(function() {
+            $.fn.zTree.init($("#treeDemo"), setting, zNodes);
+            zTree = $.fn.zTree.getZTreeObj("treeDemo");
+            zTree.expandAll(true);
+            $("#ztree_expandAll").click(function() {
+                if ($(this).data("open")) {
+                    zTree.expandAll(false);
+                    $(this).data("open", false);
+                } else {
+                    zTree.expandAll(true);
+                    $(this).data("open", true);
+                }
+            });
+        });
+
+        //通用表单post提交
+        form.on('submit(submit)',function(event, treeId, treeNode){
+            // function zTreeOnClick(event, treeId, treeNode) {       //第二步
+            var treeObj = $.fn.zTree.getZTreeObj("treeDemo"),
+                nodes = treeObj.getCheckedNodes(true),
+                v = "";
+            var str = "";
+            var lev = "";
+            for (var i = 0; i < nodes.length; i++) {
+                // v += nodes[i].name + ",";
+                // console.log("节点id:" + nodes[i].id + "节点名称" + v); //获取选中节点的值
+                if ( str != "" ) {
+                    str += ",";
+                }
+                str += nodes[i].id;
+            }
+            var arr = [];
+            var arr = str.split(',');
+
+            $.ajax({
+                url: '{:url("role/doAuth")}',
+                type: 'POST',
+                dataType: 'json',
+                data: {
+                    id : $('input[name="id"]').val(),
+                    rules : arr
+                },
+                beforeSend: function(){},
+                success: function(data){
+                    if ( data.status == 1 ) {
+                        layer.msg(data.message, {
+                            time: 1500
+                        },function(){
+                            parent.window.location.reload();
+                            var index = parent.layer.getFrameIndex(window.name); //获取窗口索引
+                            parent.layer.close(index);
+                        });
+                    } else if ( data.status == 0 ) {
+                        layer.alert(data.message, {
+                            icon: 2,
+                            skin: 'layer-ext-moon'
+                        },function(){
+                            window.location.reload();
+                        });
+                    }
+                }
+            });
+            return false;
+            // }
+        });
+    });
+</script>
+{/block}

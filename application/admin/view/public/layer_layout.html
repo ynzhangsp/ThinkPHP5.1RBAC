@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>{$title|default="ThinkPHP5.1 RBAC权限管理系统"}</title>
+    {// 加载CSS样式}
+    {load href="__CSS__/public/public.css"/}
+    {load href="__LAYUI__/css/layui.css"/}
+    {load href="__CSS__/admin/layuimini.css"/}
+    {load href="__CSS__/font-awesome-4.7.0/css/font-awesome.min.css"/}
+    {load href="__CSS__/iconfont/iconfont.css"/}
+    {load href="__CSS__/admin/admin.css"/}
+    {block name="css"}{/block}
+</head>
+<body id="layer">
+<div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-md12">
+            <div class="layui-card">
+                <div class="layui-card-body">
+                    {block name="main"}{/block}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {// 加载js文件}
+    {load href="__JS__/jquery-3.4.1.min.js"/}
+    {load href="__LAYUI__/layui.js"/}
+    {load href="__JS__/admin/layout.js"/}
+    {block name="js"}{/block}
+
+    {// js代码}
+    {block name="lay_ext"}{/block}
+    {block name="layui"}
+    <script>
+        layui.use(['element', 'layer', 'layuimini'], function () {
+            var $ = layui.jquery,
+                element = layui.element,
+                layer = layui.layer;
+            layuimini.init('');
+        });
+        function editPwd() {
+            layer.open({
+                type: 2,
+                title: '修改密码',
+                shade: 0.6,
+                area: ['40%', '50%'],
+                content: '{:url("index/editPwd")}'
+            });
+        }
+    </script>
+    {/block}
+    {block name="javascript"}{/block}
+</body>
+</html>
